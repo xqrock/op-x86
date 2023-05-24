@@ -16,9 +16,6 @@
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+git clone https://github.com/firker/diy-ziyong.git package/diy-ziyong
 git clone https://github.com/linkease/istore.git package/istore
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/luci-app-wrtbwmon
-svn co https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/wrtbwmon
-svn co https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
-svn co https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/luci-app-adguardhome
