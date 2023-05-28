@@ -18,5 +18,6 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
+git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/luci-app-wrtbwmon
 svn co https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/wrtbwmon
