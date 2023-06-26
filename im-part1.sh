@@ -25,8 +25,8 @@
 # git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 # git clone https://github.com/fw876/helloworld.git package/ssr
 # git clone https://github.com/firker/diy-ziyong.git package/diy-ziyong
-# git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
-# git clone -b luci https://github.com/xiaorouji/openwrt-passwall package/passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
+git clone -b luci https://github.com/xiaorouji/openwrt-passwall package/passwall
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 git clone https://github.com/linkease/istore.git package/istore
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
