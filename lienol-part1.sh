@@ -16,9 +16,13 @@
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
-echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
+git clone -b luci https://github.com/xiaorouji/openwrt-passwall package/passwall
+git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
+git clone https://github.com/linkease/istore.git package/istore
+git clone https://github.com/linkease/istore-ui.git package/istore-ui
 git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/luci-app-wrtbwmon
 svn co https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/wrtbwmon
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
