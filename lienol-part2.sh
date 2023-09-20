@@ -15,3 +15,4 @@
 rm -rf ./feeds/other/luci-app-adguardhome
 rm -rf ./feeds/other/luci-app-tcpdump
 rm -rf ./feeds/openwrt-packages/luci-app-smartdns
+rm -rf ./feeds/openwrt-packages/luci-app-mosdns
