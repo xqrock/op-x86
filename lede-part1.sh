@@ -18,7 +18,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git  package/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr.git  package/luci-app-vssr
 git clone https://github.com/fw876/helloworld.git package/ssr
 # git clone https://github.com/immortalwrt/homeproxy.git package/luci-app-homeproxy
-git clone https://github.com/firker/diy-ziyong.git package/diy-ziyong
+# git clone https://github.com/firker/diy-ziyong.git package/diy-ziyong
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git  package/luci-theme-argon-18.06
 git clone https://github.com/gngpp/luci-theme-neobird.git package/luci-theme-neobird
