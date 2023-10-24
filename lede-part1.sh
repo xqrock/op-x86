@@ -56,3 +56,4 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-webrestriction pack
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-weburl package/luci-app-weburl
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-timecontrol package/luci-app-timecontrol
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-timewol package/luci-app-timewol
+git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
