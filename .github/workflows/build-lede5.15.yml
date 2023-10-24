@@ -109,9 +109,7 @@ jobs:
     - name: SSH链接管理
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-      env:
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
 
     - name: 下载安装包
       id: package
@@ -142,7 +140,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: LEDE5.15${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/bin/packages/x86_64/base
 
     - name: 整理编译好的固件
@@ -187,7 +185,9 @@ jobs:
         tag: ${{ env.TAG_TIME }}
         commit: main
         token: ${{ secrets.RELEASE_TOKEN }}
-        body: LEDE|5.15
+        body: |
+          📥 固件下载
+          🔗 [国外WT网盘](${{ steps.wetransfer.outputs.url }})
         artifacts: ${{ env.FIRMWARE }}/*
 
     - name: 清理旧的workflow
