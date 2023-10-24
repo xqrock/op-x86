@@ -61,3 +61,5 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos package/l
 # svn co https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
 # svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome package/luci-app-adguardhome
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-webrestriction package/luci-app-webrestriction
+
