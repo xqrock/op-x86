@@ -14,8 +14,8 @@ sed -i 's/KERNEL_PATCHVER:=6.2/KERNEL_PATCHVER:=5.15/g' ./target/linux/x86/Makef
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 # sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 # sed -i '$a src-git jerryk https://github.com/jerrykuku/openwrt-package' feeds.conf.default
-git clone https://github.com/jerrykuku/lua-maxminddb.git  package/lua-maxminddb
-git clone https://github.com/jerrykuku/luci-app-vssr.git  package/luci-app-vssr
+# git clone https://github.com/jerrykuku/lua-maxminddb.git  package/lua-maxminddb
+# git clone https://github.com/jerrykuku/luci-app-vssr.git  package/luci-app-vssr
 git clone https://github.com/fw876/helloworld.git package/ssr
 # git clone https://github.com/immortalwrt/homeproxy.git package/luci-app-homeproxy
 # git clone https://github.com/firker/diy-ziyong.git package/diy-ziyong
@@ -33,7 +33,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 # git clone https://github.com/firkerword/luci-app-mosdns.git package/mosdns
 # git clone https://github.com/firkerword/luci-app-smartdns.git package/luci-app-smartdns
 # git clone https://github.com/firkerword/smartdns.git package/smartdns
-# git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
+git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
@@ -42,7 +42,7 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
 # git clone https://github.com/sbwml/luci-app-alist.git package/luci-app-alist
 # git clone https://github.com/firkerword/luci-app-lucky.git package/lucky
-git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky
+# git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky
 # git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 # svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-bypass package/luci-app-bypass
 # git clone https://github.com/dwj0/luci-app-sms-tool.git package/luci-app-sms-tool
