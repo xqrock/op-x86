@@ -59,4 +59,5 @@ git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tc
 # svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/luci-app-wrtbwmon
 # svn co https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/wrtbwmon
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/adguardhome
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-adguardhome
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
