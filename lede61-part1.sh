@@ -46,16 +46,17 @@ git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 git clone https://github.com/linkease/istore.git package/istore
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
-git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
+# git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-adguardhome
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-timewol
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-timecontrol
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-weburl
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-webrestriction
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
+# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
+# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
