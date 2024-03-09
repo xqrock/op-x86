@@ -85,11 +85,11 @@ jobs:
         echo "=============================================================================="
         df -hT
         echo "=============================================================================="
-
-    - name: Checkout
+        
+    - name: 检查项目分支
       uses: actions/checkout@main
-      
-    - name: Initialization environment
+
+    - name: 安装编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
