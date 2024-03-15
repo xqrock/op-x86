@@ -31,7 +31,7 @@ rm -rf package/custom; mkdir package/custom
 sed -i '$a src-git nas https://github.com/linkease/nas-packages.git;master' feeds.conf.default
 sed -i '$a src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' feeds.conf.default
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
-git clone https://github.com/firker/diy-ziyong.git package/diy-ziyong
+# git clone https://github.com/firker/diy-ziyong.git package/diy-ziyong
 git clone https://github.com/linkease/istore.git package/istore
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
@@ -46,6 +46,6 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
-# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-adguardhome
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-adguardhome
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
