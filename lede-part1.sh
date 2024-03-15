@@ -50,4 +50,5 @@ merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-timecontrol
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-weburl
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-webrestriction
-
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
