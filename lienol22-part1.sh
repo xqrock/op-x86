@@ -13,10 +13,31 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
+function merge_package(){
+    repo=`echo $1 | rev | cut -d'/' -f 1 | rev`
+    pkg=`echo $2 | rev | cut -d'/' -f 1 | rev`
+    # find package/ -follow -name $pkg -not -path "package/custom/*" | xargs -rt rm -rf
+    git clone --depth=1 --single-branch $1
+    mv $2 package/custom/
+    rm -rf $repo
+}
+function drop_package(){
+    find package/ -follow -name $1 -not -path "package/custom/*" | xargs -rt rm -rf
+}
+
+rm -rf package/custom; mkdir package/custom
+
 # Add a feed source
-#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
-echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wrtbwmon package/luci-app-wrtbwmon
-svn co https://github.com/kiddin9/openwrt-packages/trunk/wrtbwmon package/wrtbwmon
+git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
+find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+find ./ | grep Makefile | grep mosdns | xargs rm -f
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/linkease/istore.git package/istore
+git clone https://github.com/linkease/istore-ui.git package/istore-ui
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
+merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
+
