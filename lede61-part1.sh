@@ -29,10 +29,6 @@ function drop_package(){
 rm -rf package/custom; mkdir package/custom
 
 # Add a feed source
-# sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-# sed -i '$a src-git jerryk https://github.com/jerrykuku/openwrt-package' feeds.conf.default
-# sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default
-# merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
 # git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 # git clone https://github.com/sbwml/openwrt-alist.git package/openwrt-alist
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
@@ -58,7 +54,6 @@ merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclas
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-adguardhome
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-timewol
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-timecontrol
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-weburl
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-webrestriction
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
