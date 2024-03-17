@@ -138,7 +138,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ env.FILE_TIME }}  Lienol21
+        name: ${{ env.FILE_TIME }}  Lienol22
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
