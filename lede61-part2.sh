@@ -8,7 +8,7 @@
 # Blog: https://p3terx.com
 #============================================================
 
-# rm -rf ./feeds/luci/applications/luci-app-wrtbwmon
+rm -rf ./feeds/luci/applications/luci-app-wrtbwmon
 rm -rf ./feeds/luci/applications/luci-app-mosdns
 rm -rf ./feeds/packages/net/mosdns
 # rm -rf ./feeds/luci/applications/luci-app-wechatpush
