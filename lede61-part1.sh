@@ -29,16 +29,10 @@ function drop_package(){
 rm -rf package/custom; mkdir package/custom
 
 # Add a feed source
-# git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 # git clone https://github.com/sbwml/openwrt-alist.git package/openwrt-alist
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
-# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git  package/luci-theme-argon-18.06
-# git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
-# git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme-opentopd
-# git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
-# git clone https://github.com/firkerword/luci-app-lucky.git package/lucky
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
