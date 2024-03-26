@@ -24,20 +24,12 @@ function drop_package(){
 }
 
 # Add a feed source
-# sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-# sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
-# sed -i '$a src-git jerryk https://github.com/jerrykuku/openwrt-package' feeds.conf.default
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 # git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
-# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-bypass
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
-# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git  package/luci-theme-argon-18.06
-# git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
-# git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme-opentopd
 git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
-# git clone https://github.com/firkerword/luci-app-lucky.git package/lucky
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
@@ -50,5 +42,5 @@ merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-timecontrol
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-weburl
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-webrestriction
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
+# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
+# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
