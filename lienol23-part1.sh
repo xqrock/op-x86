@@ -28,6 +28,7 @@ function drop_package(){
 rm -rf package/custom; mkdir package/custom
 
 # Add a feed source
+git clone https://github.com/jerrykuku/lua-maxminddb.git  package/lua-maxminddb
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
@@ -39,6 +40,8 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/linkease/istore.git package/istore
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-eqosplus
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-theme-design
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-design-config
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
