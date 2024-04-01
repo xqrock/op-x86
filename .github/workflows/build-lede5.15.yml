@@ -13,8 +13,6 @@ name: Build lede5.15 OpenWrt
 on:
   repository_dispatch:
   workflow_dispatch:
-  #schedule:
-    - cron: 0 7 */15 * * 
     
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
