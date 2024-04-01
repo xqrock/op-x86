@@ -29,6 +29,7 @@ rm -rf package/custom; mkdir package/custom
 
 # Add a feed source
 git clone https://github.com/jerrykuku/lua-maxminddb.git  package/lua-maxminddb
+git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
