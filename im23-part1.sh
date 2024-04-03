@@ -45,7 +45,7 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
-merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-adguardhome
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-adguardhome
 # merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/adguardhome
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
