@@ -14,7 +14,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 12 */16 * * 
+    - cron: 0 12 */15 * * 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: 23.05
