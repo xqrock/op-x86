@@ -40,7 +40,8 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/linkease/istore.git package/istore
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-eqosplus
+# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-eqosplus
+merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-eqos
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
