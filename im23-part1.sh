@@ -38,6 +38,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/ope
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
 git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
+git clone https://github.com/morytyann/OpenWrt-mihomo.git package/OpenWrt-mihomo
 # git clone https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
 # git clone https://github.com/v2rayA/v2raya-openwrt.git package/v2raya-openwrt
 # git clone https://github.com/firkerword/luci-app-lucky.git package/lucky
