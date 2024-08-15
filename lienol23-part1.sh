@@ -35,6 +35,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/ope
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
 git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
+git clone https://github.com/morytyann/OpenWrt-mihomo.git package/OpenWrt-mihomo
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
