@@ -43,6 +43,6 @@ git clone https://github.com/linkease/istore.git package/istore
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
 # merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-eqosplus
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-eqos
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
+merge_package https://github.com/sirpdboy/sirpdboy-package sirpdboy-package/wrtbwmon
+merge_package https://github.com/sirpdboy/sirpdboy-package sirpdboy-package/luci-app-wrtbwmon
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
