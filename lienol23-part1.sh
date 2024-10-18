@@ -28,6 +28,7 @@ function drop_package(){
 rm -rf package/custom; mkdir package/custom
 
 # Add a feed source
+sed -i '$a src-git mihomo https://github.com/morytyann/OpenWrt-mihomo.git;main' feeds.conf.default
 git clone https://github.com/jerrykuku/lua-maxminddb.git  package/lua-maxminddb
 git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
