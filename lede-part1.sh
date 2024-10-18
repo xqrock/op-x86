@@ -37,10 +37,10 @@ git clone https://github.com/linkease/istore.git package/istore
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
 # git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-adguardhome
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-timewol
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-timecontrol
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-weburl
-merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-webrestriction
-# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
-# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
+merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-adguardhome
+merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-timewol
+merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-timecontrol
+merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-weburl
+merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-webrestriction
+# merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/wrtbwmon
+# merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-wrtbwmon
