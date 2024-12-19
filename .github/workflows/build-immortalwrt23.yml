@@ -151,32 +151,38 @@ jobs:
       with:
         name: immortalwrt23_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
-       
-    - name: 发布至release
-      id: release
-      uses: ncipollo/release-action@v1
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        name: ${{ env.FILE_TIME }} 「 immortalwrt23-5.15 」
-        allowUpdates: true
-        tag: ${{ env.TAG_TIME }}
-        commit: main
-        body: |
-        artifacts: ${{ env.FIRMWARE }}/*
 
-    - name: 清理旧的workflow
-      uses: FunctionXJB/delete-workflow-runs@main
+    - name: Generate release tag
+      id: tag
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      run: |
+        echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+        touch release.txt
+        [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
+        echo "status=success" >> $GITHUB_OUTPUT
+       
+    - name: Upload firmware to release
+      uses: softprops/action-gh-release@v2
+      if: steps.tag.outputs.status == 'success' && !cancelled()
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: ${{ env.FILE_TIME }}  immortalwrt23
+        tag_name: ${{ steps.tag.outputs.release_tag }}
+        body_path: release.txt
+        files: ${{ env.FIRMWARE }}/*
+
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@main
       with:
         retain_days: 180
         keep_minimum_runs: 10
 
-    - name: 删除旧的Releases
-      uses: dev-drprasad/delete-older-releases@v0.2.1
+    - name: Remove old Releases
+      uses: dev-drprasad/delete-older-releases@master
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 15
         delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
