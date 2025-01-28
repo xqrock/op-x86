@@ -15,10 +15,12 @@ sed -i 's/192.168.1.1/192.168.188.253/g' package/base-files/files/bin/config_gen
 # sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
 rm -rf ./feeds/packages/net/adguardhome
 rm -rf ./feeds/packages/net/mosdns
+rm -rf ./feeds/packages/net/alist
 # rm -rf ./feeds/packages/net/smartdns
 rm -rf ./feeds/luci/applications/luci-app-passwall
 rm -rf ./feeds/luci/applications/luci-app-ssr-plus
 rm -rf ./feeds/luci/applications/luci-app-openclash
 rm -rf ./feeds/luci/applications/luci-app-wechatpush
+rm -rf ./feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
