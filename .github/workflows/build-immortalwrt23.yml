@@ -14,7 +14,8 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 9 */15 * *     
+    - cron: 0 9 */15 * * 
+    
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-23.05
@@ -70,7 +71,7 @@ jobs:
       run: |
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         
     - name: 加载自定义设置
       run: |
