@@ -34,16 +34,16 @@ git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-auto
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
-git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
+# git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
 git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
-git clone https://github.com/morytyann/OpenWrt-mihomo.git package/OpenWrt-mihomo
+git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/linkease/istore.git package/istore
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
-# merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-eqosplus
+merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-eqosplus
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-eqos
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/wrtbwmon
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-wrtbwmon
-merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
+# merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
