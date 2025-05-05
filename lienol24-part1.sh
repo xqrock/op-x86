@@ -42,7 +42,7 @@ find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/linkease/istore.git package/istore
-git clone https://github.com/linkease/istore-ui.git package/istore-ui
+# git clone https://github.com/linkease/istore-ui.git package/istore-ui
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-eqos
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-adguardhome
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/adguardhome
