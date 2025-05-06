@@ -62,6 +62,8 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         df -hT $PWD
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+        sudo docker image prune --all --force
         sudo -E apt-get -qq update
         sudo apt-get install libfuse-dev
         sudo -E apt-get -qq install binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev make4.1+ perl python3.7+ rsync subversion unzip which
@@ -70,6 +72,7 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+
 
     - name: Clone source code
       working-directory: /workdir
