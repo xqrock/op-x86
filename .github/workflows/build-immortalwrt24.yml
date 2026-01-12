@@ -21,14 +21,14 @@ on:
 #   schedule:
 #     - cron: 0 9 */35 * *     
 env:
+  OPENWRT_NAME: immortalwrt
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: im-24.config
   DIY_P1_SH: im24-part1.sh
   DIY_P2_SH: im24-part2.sh
-  SSH_ACTIONS: false
-  UPLOAD_BIN_DIR: true
+  SSH_ACTIONS: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
@@ -40,8 +40,26 @@ jobs:
     steps:
     - name: 检查项目分支
       uses: actions/checkout@main
+      
+    - name: 安装编译环境
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        df -hT $PWD
+        sudo -E apt-get -qq update
+        sudo apt-get install libfuse-dev
+        sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.org/init_build_environment.sh)'
+        sudo -E apt-get -qq autoremove --purge
+        sudo -E apt-get -qq clean
+        sudo timedatectl set-timezone "$TZ"
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
 
-    - name: 清理磁盘空间
+    - name: Before
+      run: |
+        df -H
+        
+    - name: "Optimize Disk Space"
       uses: "hugoalh/disk-space-optimizer-ghaction@v0.8.1"
       with:
         operate_sudo: "True"
@@ -65,20 +83,6 @@ jobs:
     - name: After
       run: |
         df -H
-        
-    - name: 安装编译环境
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        df -hT $PWD
-        sudo -E apt-get -qq update
-        sudo apt-get install libfuse-dev
-        sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.org/init_build_environment.sh)'
-        sudo -E apt-get -qq autoremove --purge
-        sudo -E apt-get -qq clean
-        sudo timedatectl set-timezone "$TZ"
-        sudo mkdir -p /workdir
-        sudo chown $USER:$GROUPS /workdir
 
     - name: 下载固件源码
       working-directory: ./
@@ -93,15 +97,15 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-    - name: 下载插件
-      run: cd openwrt && ./scripts/feeds clean && ./scripts/feeds update -a
-
-    - name: 读取插件
-      run: cd openwrt && ./scripts/feeds install -a
+        
+    - name: 更新 & 安装 feeds
+      run: |
+        cd openwrt
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
 
     - name: 更改设置
       run: |
-        [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
@@ -129,7 +133,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 V=s
+        make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
@@ -145,14 +149,7 @@ jobs:
         echo "=============================================================================="
         df -hT
         echo "=============================================================================="
-
-    - name: 上传bin压缩目录
-      uses: actions/upload-artifact@main
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
-      with:
-        name: immortalwrt23_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: openwrt/bin/packages/x86_64
-
+        
     - name: 整理编译好的固件
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
@@ -173,7 +170,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: immortalwrt23_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: immortalwrt24_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Generate release tag
@@ -186,12 +183,12 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
        
     - name: Upload firmware to release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v2.1.0
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ env.FILE_TIME }}  immortalwrt23
+        name: ${{ env.FILE_TIME }}  immortalwrt24
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
