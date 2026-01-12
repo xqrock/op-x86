@@ -40,18 +40,7 @@ jobs:
     steps:
     - name: 检查项目分支
       uses: actions/checkout@main
-      
-    - name: Before
-      run: |
-        df -H
-        
-    - name: Free disk space
-      uses: sbwml/actions@free-disk
-
-    - name: After
-      run: |
-        df -H
-
+    
     - name: 安装编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -66,13 +55,16 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
-    - name: 查看磁盘使用情况
-      if: (!cancelled())
+    - name: Before
       run: |
-        echo "Free up disk space complete"
-        echo "=============================================================================="
-        df -hT
-        echo "=============================================================================="
+        df -H
+        
+    - name: Free disk space
+      uses: sbwml/actions@free-disk
+
+    - name: After
+      run: |
+        df -H
 
     - name: 下载固件源码
       working-directory: ./
