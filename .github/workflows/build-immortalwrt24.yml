@@ -62,7 +62,10 @@ jobs:
         npm_clean: "True"
         os_swap: "True"
 
-
+    - name: After
+      run: |
+        df -H
+        
     - name: 安装编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -119,7 +122,8 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-        
+        df -h  # 再次检查空间
+          
     - name: 开始编译固件
       id: compile
       run: |
