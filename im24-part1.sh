@@ -28,9 +28,6 @@ function drop_package(){
 rm -rf package/custom; mkdir package/custom
 
 # Add a feed source
-sed -i '$a src-git nas https://github.com/linkease/nas-packages.git;master' feeds.conf.default
-sed -i '$a src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' feeds.conf.default
-# sed -i '$a src-git mihomo https://github.com/morytyann/OpenWrt-mihomo.git;main' feeds.conf.default
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 git clone https://github.com/linkease/istore.git package/istore
@@ -41,14 +38,12 @@ git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-ni
 # git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
 # git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
 # git clone https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
-# git clone https://github.com/v2rayA/v2raya-openwrt.git package/v2raya-openwrt
 # git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
-# merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-adguardhome
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/adguardhome
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/wrtbwmon
