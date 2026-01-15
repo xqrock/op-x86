@@ -33,7 +33,7 @@ git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-adv
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 # git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
-git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
+# git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
 git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
 git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
@@ -44,9 +44,5 @@ git clone https://github.com/linkease/istore.git package/istore
 # git clone https://github.com/linkease/istore-ui.git package/istore-ui
 git clone https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 git clone https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
-merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-adguardhome
-merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/adguardhome
-merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/wrtbwmon
-merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-wrtbwmon
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/msd_lite
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
