@@ -48,4 +48,5 @@ merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/adguardhome
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/wrtbwmon
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-wrtbwmon
+merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/msd_lite
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
