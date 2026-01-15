@@ -29,8 +29,6 @@ rm -rf package/custom; mkdir package/custom
 
 # Add a feed source
 # sed -i '$a src-git mihomo https://github.com/morytyann/OpenWrt-mihomo.git;main' feeds.conf.default
-git clone https://github.com/jerrykuku/lua-maxminddb.git  package/lua-maxminddb
-git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
@@ -41,9 +39,11 @@ git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-ni
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/linkease/istore.git package/istore
 # git clone https://github.com/linkease/istore-ui.git package/istore-ui
-merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-eqos
+git clone https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
+git clone https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-adguardhome
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/adguardhome
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/wrtbwmon
