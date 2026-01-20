@@ -25,16 +25,15 @@ function drop_package(){
 
 # Add a feed source
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
-git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
-git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
+# git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
+# git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
 git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/linkease/istore.git package/istore
-# git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
-merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
+git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-adguardhome
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/adguardhome
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-msd_lite
