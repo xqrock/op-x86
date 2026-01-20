@@ -43,5 +43,6 @@ git clone https://github.com/linkease/istore.git package/istore
 # git clone https://github.com/linkease/istore-ui.git package/istore-ui
 git clone https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 git clone https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
+merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-msd_lite
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/msd_lite
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
