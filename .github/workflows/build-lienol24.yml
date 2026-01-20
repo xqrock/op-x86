@@ -20,6 +20,7 @@ on:
         default: 'false'
 
 env:
+  OPENWRT_NAME: lienol
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: 24.10
   FEEDS_CONF: feeds.conf.default
