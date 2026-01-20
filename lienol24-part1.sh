@@ -30,9 +30,8 @@ rm -rf package/custom; mkdir package/custom
 # Add a feed source
 # sed -i '$a src-git mihomo https://github.com/morytyann/OpenWrt-mihomo.git;main' feeds.conf.default
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
 # git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
 git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
 git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
