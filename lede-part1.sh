@@ -25,8 +25,8 @@ function drop_package(){
 
 # Add a feed source
 git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
-# git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
-# git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
 git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
@@ -39,3 +39,4 @@ merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/adguardhome
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-msd_lite
 merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/msd_lite
+merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
