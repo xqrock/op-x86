@@ -37,6 +37,6 @@ git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tc
 git clone https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/luci-app-adguardhome
 merge_package https://github.com/kenzok8/openwrt-packages openwrt-packages/adguardhome
-merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-msd_lite
-merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/msd_lite
+# merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/luci-app-msd_lite
+# merge_package https://github.com/kiddin9/kwrt-packages kwrt-packages/msd_lite
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
