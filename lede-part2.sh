@@ -16,9 +16,11 @@
 # rm -rf ./feeds/luci/applications/luci-app-wrtbwmon
 rm -rf ./feeds/packages/net/adguardhome
 # rm -rf ./feeds/packages/net/smartdns
+rm -rf ./feeds/luci/applications/luci-app-ssr-plus
 rm -rf ./feeds/luci/applications/luci-app-mosdns
 rm -rf ./feeds/luci/applications/luci-app-passwall
 rm -rf ./feeds/luci/applications/luci-app-openclash
+rm -rf ./feeds/luci/applications/luci-app-wechatpush
 rm -rf ./feeds/packages/net/mosdns
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
