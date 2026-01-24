@@ -28,6 +28,7 @@ git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-adv
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
 git clone https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
+git clone https://github.com/nikkinikki-org/OpenWrt-nikki package/OpenWrt-nikki
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
